@@ -11,22 +11,50 @@
       margin: 15px;
       padding: 15px;
     }
+    .main{
+      display: flex;
+    }
+    .main img{
+      height: 300px;
+    }
+
+    @media (max-width:768px) {
+      .main{
+        display: block;
+      }
+      .main img{
+        width: 85%;
+      }
+      iframe{
+        width: 85%;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <h1><img src="華庭茶葉有限公司logo.png" style="height: 40px;border-radius: 5px;">華庭茶葉有限公司收銀系統</h1>
-  <p id="now-datetime"></p>
-  <h2>一、價目表</h2>
-  <img src="IMG_0189.jpg" alt="" style="width: 85%;">
-  <h2>二、系統登入</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSmoGO2Ohl-fDmK3uEmITwgKxOaWE2Mdsz1URef2rs2JFF7A/viewform"
-    style="width: 85%;height: 500px;"></iframe>
-  <h2>三、查看統計</h2>
-  <p>＊看系統心情更新（五分鐘內更新一次）</p>
-  <iframe
-    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAjAF1oRipqzGw3_aBzWCjPC545axSA25C28MTthFDe3tWCuBfrGR7pEzroMr2zwoKEtyg81H1axJC/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
-    style="width: 85%;height: 500px;font-family: Lisong pro;"></iframe>
+  <div class="header">
+    <h1><img src="華庭茶葉有限公司logo.png" style="height: 40px;border-radius: 5px;">華庭茶葉有限公司收銀系統</h1>
+    <p id="now-datetime"></p>
+  </div>
+  <div class="main">
+    <div>
+      <h2>一、價目表</h2>
+      <img src="IMG_0189.jpg" alt="">
+    </div>
+    <div>
+      <h2>二、系統登入</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSmoGO2Ohl-fDmK3uEmITwgKxOaWE2Mdsz1URef2rs2JFF7A/viewform"
+        style="height: 500px;"></iframe>
+    </div>
+    <div>
+      <h2>三、查看統計</h2>
+      <p>＊看系統心情更新（五分鐘內更新一次）</p>
+      <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAjAF1oRipqzGw3_aBzWCjPC545axSA25C28MTthFDe3tWCuBfrGR7pEzroMr2zwoKEtyg81H1axJC/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+        style="height: 500px;font-family: Lisong pro;"></iframe>
+    </div>
+  </div>
   <p>&copy;華庭茶葉有限公司 許元洧製作</p>
   <script>
     // 取得當前時間
