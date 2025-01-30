@@ -1,118 +1,23 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>收銀系統</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; }
-        select, input, button { margin: 10px; padding: 10px; font-size: 16px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>華庭茶葉附屬系統</title>
+  <style>
+    body{
+      font-family: LiSong Pro;
+    }
+  </style>
 </head>
 <body>
-    <h1>華庭茶葉<br>收銀系統</h1>
-
-    <label>品項：</label>
-    <select id="item" onchange="updatePrice()">
-        <option value="美式咖啡" data-price="60" data-type="drink">美式咖啡 - 60</option>
-        <option value="鴛鴦咖啡" data-price="70" data-type="drink">鴛鴦咖啡 - 70</option>
-        <option value="海鹽咖啡" data-price="60" data-type="drink">海鹽咖啡 - 60</option>
-        <option value="卡布奇諾" data-price="70" data-type="drink">卡布奇諾 - 70</option>
-        <option value="焦糖拿鐵" data-price="70" data-type="drink">焦糖拿鐵 - 70</option>
-        <option value="摩卡咖啡" data-price="70" data-type="drink">摩卡咖啡 - 70</option>
-        <option value="紅茶" data-price="40" data-type="drink">紅茶 - 40</option>
-        <option value="紅茶拿鐵" data-price="50" data-type="drink">紅茶拿鐵 - 50</option>
-        <option value="黑糖紅茶" data-price="50" data-type="drink">黑糖紅茶 - 50</option>
-        <option value="黑糖紅茶" data-price="60" data-type="drink">黑糖奶茶 - 60</option>
-        <option value="珍珠奶茶" data-price="50" data-type="drink">珍珠奶茶 - 50</option>
-        <option value="黑糖紅茶" data-price="60" data-type="drink">黑糖珍珠奶茶 - 60</option>
-        <option value="冷泡茶" data-price="50" data-type="drink">冷泡茶 - 50</option>
-    </select>
-    
-    <button onclick="addCustomItem()">新增品項</button><br>
-
-    <label>數量：</label>
-    <input type="number" id="quantity" value="1" min="1" oninput="updateTotal()"><br>
-
-    <label>單價：</label>
-    <input type="number" id="price" readonly><br>
-
-    <label>總價：</label>
-    <input type="number" id="total" readonly><br>
-
-    <button onclick="submitData()">提交</button>
-    <p id="status"></p>
-
-    <h2>統計資料</h2>
-    <button onclick="getReport()">取得統計</button>
-    <hr>
-    <div id="report"></div>
-    <hr>
-    <p>&copy;許元洧製作 華庭茶葉有限公司</p>
-
-    <script>
-        const API_URL = "https://script.google.com/macros/s/AKfycbyEWovin1b-zigNWXJGoxK9_UGQWCZKwKefRcQaa5sFtJGMsxPSmkDPXu35Gwp3VHbOGw/exec";
-
-        function updatePrice() {
-            let select = document.getElementById("item");
-            let price = select.options[select.selectedIndex].getAttribute("data-price");
-            document.getElementById("price").value = price;
-            updateTotal();
-        }
-
-        function updateTotal() {
-            let quantity = Number(document.getElementById("quantity").value);
-            let price = Number(document.getElementById("price").value);
-            document.getElementById("total").value = quantity * price;
-        }
-
-        function submitData() {
-            let select = document.getElementById("item");
-            let item = select.value;
-            let quantity = Number(document.getElementById("quantity").value);
-            let price = Number(document.getElementById("price").value);
-            let total = Number(document.getElementById("total").value);
-            let itemType = select.options[select.selectedIndex].getAttribute("data-type");
-
-            fetch(API_URL, {
-                method: "POST",
-                mode: "no-cors", // 新增這行
-                body: JSON.stringify({ item, quantity, price, total, itemType }),
-                headers: { "Content-Type": "application/json" }
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("status").textContent = data.message;
-            })
-            .catch(error => console.error("錯誤：", error));
-        }
-
-        function getReport() {
-            fetch(API_URL)
-                .then(response => response.json())
-                .then(data => {
-                    let reportHTML = "<ul>";
-                    for (let date in data) {
-                        reportHTML += `<li>${date}：${data[date].revenue} 元，${data[date].cups} 杯</li>`;
-                    }
-                    reportHTML += "</ul>";
-                    document.getElementById("report").innerHTML = reportHTML;
-                })
-                .catch(error => console.error("錯誤：", error));
-        }
-
-        function addCustomItem() {
-            let itemName = prompt("請輸入品項名稱：");
-            let itemPrice = prompt("請輸入價格：");
-            if (itemName && itemPrice) {
-                let newOption = new Option(`${itemName} - ${itemPrice}`, itemName);
-                newOption.setAttribute("data-price", itemPrice);
-                newOption.setAttribute("data-type", "other");
-                document.getElementById("item").add(newOption);
-            }
-        }
-
-        updatePrice();
-    </script>
+  <h1><img src="華庭茶葉有限公司logo.png" style="height: 40px;border-radius: 5px;">華庭茶葉有限公司收銀系統</h1>
+  <h2>一、價目表</h2>
+  <img src="IMG_0189.jpg" alt="" style="width: 85%;">
+  <h2>二、系統登入</h2>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSmoGO2Ohl-fDmK3uEmITwgKxOaWE2Mdsz1URef2rs2JFF7A/viewform" style="width: 85%;height: 500px;"></iframe>
+  <h2>三、查看統計</h2>
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAjAF1oRipqzGw3_aBzWCjPC545axSA25C28MTthFDe3tWCuBfrGR7pEzroMr2zwoKEtyg81H1axJC/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="width: 85%;height: 500px;"></iframe>
+  <p>&copy;華庭茶葉有限公司 許元洧製作</p>
 </body>
 </html>
