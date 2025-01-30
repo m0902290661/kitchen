@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-    <h1>收銀系統</h1>
+    <h1>華庭茶葉<br>收銀系統</h1>
 
     <label>品項：</label>
     <select id="item" onchange="updatePrice()">
@@ -24,6 +24,7 @@
         <option value="紅茶拿鐵" data-price="50" data-type="drink">紅茶拿鐵 - 50</option>
         <option value="黑糖紅茶" data-price="50" data-type="drink">黑糖紅茶 - 50</option>
         <option value="珍珠奶茶" data-price="50" data-type="drink">珍珠奶茶 - 50</option>
+        <option value="冷泡茶" data-price="50" data-type="drink">冷泡茶 - 50</option>
     </select>
     
     <button onclick="addCustomItem()">新增品項</button><br>
@@ -42,7 +43,10 @@
 
     <h2>統計資料</h2>
     <button onclick="getReport()">取得統計</button>
+    <hr>
     <div id="report"></div>
+    <hr>
+    <p>&copy;許元洧製作 華庭茶葉有限公司</p>
 
     <script>
         const API_URL = "https://script.google.com/macros/s/AKfycbyHOa433rZTFmoimP1Evtl_ZfDvgQ9_Hg_weiJ_mlfI6LxyG_fXyBIIR2NTHZRussQ8aQ/exec";
