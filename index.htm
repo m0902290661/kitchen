@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>華庭茶葉附屬系統</title>
   <style>
-    body{
-      font-family: LiSong Pro;
+    body {
+      font-family: lisong pro;
     }
   </style>
 </head>
+
 <body>
   <h1><img src="華庭茶葉有限公司logo.png" style="height: 40px;border-radius: 5px;">華庭茶葉有限公司收銀系統</h1>
+  <p id="now-datetime"></p>
   <h2>一、價目表</h2>
   <img src="IMG_0189.jpg" alt="" style="width: 85%;">
   <h2>二、系統登入</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSmoGO2Ohl-fDmK3uEmITwgKxOaWE2Mdsz1URef2rs2JFF7A/viewform" style="width: 85%;height: 500px;"></iframe>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSmoGO2Ohl-fDmK3uEmITwgKxOaWE2Mdsz1URef2rs2JFF7A/viewform"
+    style="width: 85%;height: 500px;"></iframe>
   <h2>三、查看統計</h2>
   <p>＊五分鐘更新一次</p>
-  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAjAF1oRipqzGw3_aBzWCjPC545axSA25C28MTthFDe3tWCuBfrGR7pEzroMr2zwoKEtyg81H1axJC/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="width: 85%;height: 500px;"></iframe>
+  <iframe
+    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAjAF1oRipqzGw3_aBzWCjPC545axSA25C28MTthFDe3tWCuBfrGR7pEzroMr2zwoKEtyg81H1axJC/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+    style="width: 85%;height: 500px;font-family: Lisong pro;"></iframe>
   <p>&copy;華庭茶葉有限公司 許元洧製作</p>
+  <script>
+    // 取得當前時間
+    function getCurrentDateTime() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = (now.getMonth() + 1).toString().padStart(2, '0');
+      const day = now.getDate().toString().padStart(2, '0');
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+
+      return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    }
+
+    // 更新顯示當前時間的元素
+    function updateCurrentDateTime() {
+      const nowDatetimeElement = document.getElementById('now-datetime');
+      if (nowDatetimeElement) {
+        nowDatetimeElement.textContent = getCurrentDateTime();
+      }
+    }
+
+    // 初始設定
+    updateCurrentDateTime();
+
+    // 每秒更新一次時間
+    setInterval(updateCurrentDateTime, 1000);
+  </script>
 </body>
+
 </html>
