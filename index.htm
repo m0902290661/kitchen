@@ -56,17 +56,17 @@
   <div class="main">
     <div class="drink">
       <div>
-        <h3>一、價目表</h2>
+        <h2>一、價目表</h2>
           <img src="IMG_0189.jpg" alt="">
       </div>
       <div>
-        <h3>二、飲品系統登入</h2>
+        <h2>二、飲品系統登入</h2>
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLScSmoGO2Ohl-fDmK3uEmITwgKxOaWE2Mdsz1URef2rs2JFF7A/viewform"
             style="height: 500px;"></iframe>
       </div>
       <div>       
-        <h3>三、其他系統登入</h3>
+        <h2>三、其他系統登入</h2>
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSdfM5R7aJ6MOEmWXsBzXYjUrf0nfA30aCXKC_U-gxXk1R54XQ/viewform?usp=dialog"
           frameborder="0"></iframe>
@@ -74,12 +74,15 @@
     </div>
     <div>
       <h2>系統資料</h2>
-      <iframe
+      <p style="display: inline; margin-bottom: 5px;">＊看系統心情刷新（五分鐘內）</p><button onclick="location.reload()" style="cursor: pointer;">刷新</button>
+      <iframe style="display: block;"
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAjAF1oRipqzGw3_aBzWCjPC545axSA25C28MTthFDe3tWCuBfrGR7pEzroMr2zwoKEtyg81H1axJC/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="width: 85%;"></iframe>
     </div>
   </div>
   <p>&copy;華庭茶葉有限公司 許元洧製作</p>
   <script>
+    
+
     // 取得當前時間
     function getCurrentDateTime() {
       const now = new Date();
@@ -106,6 +109,8 @@
 
     // 每秒更新一次時間
     setInterval(updateCurrentDateTime, 1000);
+
+    
   </script>
 </body>
 
