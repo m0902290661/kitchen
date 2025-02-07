@@ -2,120 +2,38 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>華庭茶葉附屬系統</title>
-  <link rel="website icon"  type="png" href="華庭茶葉有限公司logo.png">
-  <style>
-    body {
-      font-family: 'lisong pro';
-      margin: 15px;
-      padding: 15px;
-    }
-
-    .drink {
-      display: flex;
-    }
-
-    .main img {
-      height: 300px;
-    }
-
-    iframe {
-      height: 500px;
-    }
-
-    .drink,
-    .other {
-      display: flex;
-    }
-
-    @media (max-width:768px) {
-
-      .drink,
-      .other {
-        display: block;
-      }
-
-      .main img {
-        height: 300px;
-        width: 85%;
-      }
-
-      iframe {
-        width: 85%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>華庭茶葉收銀系統</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="https://script.google.com/macros/s/AKfycbz-nAzSBO45fiwJ808FSpmh7Kc2wJNBxZyJkNQy7qmLBaNZs2Z6MbQjuKu9ePQhsLq1jw/exec"></script>
 </head>
 
 <body>
-  <div class="header">
-    <img src="華庭茶葉有限公司logo.png" style="height: 40px;border-radius: 5px;">
-    <h1 style="display: in;">華庭茶葉有限公司收銀系統</h1>
-    <p id="now-datetime"></p>
-  </div>
-  <div class="main">
-    <div class="drink">
-      <div>
-        <h2>一、價目表</h2>
-        <img src="IMG_0189.jpg" alt="">
-      </div>
-      <div>
-        <h2>二、飲品系統登入</h2>
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLScSmoGO2Ohl-fDmK3uEmITwgKxOaWE2Mdsz1URef2rs2JFF7A/viewform"
-          style="height: 500px;"></iframe>
-      </div>
-      <div>
-        <h2>三、其他系統登入</h2>
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdfM5R7aJ6MOEmWXsBzXYjUrf0nfA30aCXKC_U-gxXk1R54XQ/viewform?usp=dialog"
-          frameborder="0"></iframe>
-      </div>
+
+    <div class="d01">
+        <img src="華庭茶葉有限公司logo.png" alt="">
+        <h1>華庭茶葉收銀系統</h1>
     </div>
-    <div>
-      <h2>系統資料</h2>
-      <p style="display: inline; margin-bottom: 5px;">＊看系統心情刷新（五分鐘內）</p><button onclick="location.reload()"
-        style="cursor: pointer;">刷新</button>
-      <iframe style="display: block; width: 85%;"
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAjAF1oRipqzGw3_aBzWCjPC545axSA25C28MTthFDe3tWCuBfrGR7pEzroMr2zwoKEtyg81H1axJC/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
-        style="width: 85%;"></iframe>
+
+    <div class="d02">
+        <button onclick="f50()">50</button>
+        <button onclick="f60()">60</button>
+        <button onclick="f70()">70</button>
+        <button onclick="other()">其他</button>
     </div>
-  </div>
-  <p>&copy;華庭茶葉有限公司 許元洧製作</p>
-  <script>
 
+    <div class="d03">
+        <button onclick="check()">查看統計</button>
+        <button onclick="alert('功能尚未完善')">同步統計資料</button>
+        <button onclick="del()" id="b03">刪除統計</button>
+    </div>
+    <div id="out">
+        輸出
+    </div>
 
-    // 取得當前時間
-    function getCurrentDateTime() {
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = (now.getMonth() + 1).toString().padStart(2, '0');
-      const day = now.getDate().toString().padStart(2, '0');
-      const hours = now.getHours().toString().padStart(2, '0');
-      const minutes = now.getMinutes().toString().padStart(2, '0');
-      const seconds = now.getSeconds().toString().padStart(2, '0');
-
-      return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-    }
-
-    // 更新顯示當前時間的元素
-    function updateCurrentDateTime() {
-      const nowDatetimeElement = document.getElementById('now-datetime');
-      if (nowDatetimeElement) {
-        nowDatetimeElement.textContent = getCurrentDateTime();
-      }
-    }
-
-    // 初始設定
-    updateCurrentDateTime();
-
-    // 每秒更新一次時間
-    setInterval(updateCurrentDateTime, 1000);
-
-
-  </script>
+    
+    <script src="js.js"></script>
 </body>
 
 </html>

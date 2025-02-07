@@ -1,0 +1,32 @@
+button {
+    text-decoration: none;
+    color: black;
+    border: 1px solid;
+    border-radius: 15px;
+    background-color: white;
+    font-size: 32px;
+    cursor: pointer;
+    margin: 15px;
+}
+
+#b01 {
+    background-color: green;
+}
+
+body {
+    margin: 15px;
+    padding: 15px;
+}
+
+div {
+    border-bottom: 1px solid;
+}
+
+.d01 img {
+    height: 38px;
+    border-radius: 5px;
+}
+
+#b03 {
+    background-color: red;
+}
