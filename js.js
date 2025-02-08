@@ -96,3 +96,28 @@ function del() {
         alert('已刪除。');
     }
 }
+
+//同步統計資料至google sheet id:1CnGvRZeNOHkBB02lyUcuaAB3DMLi0ofotpHMzS4gQ_U。
+function sendData() {
+    document.getElementById("out").innerText='處理中．．．（這可能需要一些時間）';
+    var scriptURL = "https://script.google.com/macros/s/AKfycbyqzKhjEefFKNbViemFr0_r_r1-fd6XdPbx4n9E6xpnVA1RYg9ho-7Yck3FrS0hUsgb/exec"; // GAS 部署網址
+    let sumk1 = key1.reduce((acc, curr) => acc + curr, 0);
+    let sumk2 = key2.reduce((acc, curr) => acc + curr, 0);
+    let sumk3 = key3.reduce((acc, curr) => acc + curr, 0);
+    let sumk4 = sumk2 + sumk3;
+    var data = {
+        sumk1:sumk1,
+        sumk2:sumk2,
+        sumk3:sumk3,
+        sumk4:sumk4,
+    };
+
+    fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    })
+    .then(() => document.getElementById("out").innerText = "同步成功！")
+    .catch(error => console.error("錯誤:", error));
+}
