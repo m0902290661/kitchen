@@ -40,6 +40,7 @@ div {
     border-radius: 5px;
     background-color: white;
     display: none;
+    padding: 5px;
 }
 .d00 button{
     display: block;
@@ -51,11 +52,20 @@ div {
 .d05 img{
     width: 25%;
 }
-.d05{
+.d05,.d06{
     border: 1px solid;
     border-radius: 5px;
     position: fixed;
     background-color: white;
     width: auto;
     display: none;
+    padding: 5px;
+}
+.d06 img{
+    height: 38px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.x{
+    font-size: 24px;
 }

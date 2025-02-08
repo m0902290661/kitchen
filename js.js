@@ -24,6 +24,7 @@ function f50() {
     key2.push(Number(f50s));
     localStorage.setItem('key1', JSON.stringify(key1));
     localStorage.setItem('key2', JSON.stringify(key2));
+    od06();
     document.getElementById('out').innerText = `50。杯數：${f50t} 金額：${f50s} 已登記。`;
     sum();
 }
@@ -35,6 +36,7 @@ function f60() {
     key2.push(Number(f50s));
     localStorage.setItem('key1', JSON.stringify(key1));
     localStorage.setItem('key2', JSON.stringify(key2));
+    od06();
     document.getElementById('out').innerText = `60。杯數：${f50t} 金額：${f50s} 已登記。`;
     sum();
 }
@@ -46,6 +48,7 @@ function f70() {
     key2.push(Number(f50s));
     localStorage.setItem('key1', JSON.stringify(key1));
     localStorage.setItem('key2', JSON.stringify(key2));
+    od06();
     document.getElementById('out').innerText = `70。杯數：${f50t} 金額：${f50s} 已登記。`;
     sum();
 }
@@ -78,7 +81,7 @@ function check() {
     let sumk2 = key2.reduce((acc, curr) => acc + curr, 0);
     let sumk3 = key3.reduce((acc, curr) => acc + curr, 0);
     let sumk4 = sumk2 + sumk3;
-
+    od06();
     document.getElementById('out').innerText = `杯數：${sumk1}，飲料總額：${sumk2}，其他總額：${sumk3}，總營業額：${sumk4}`;
 }
 
@@ -136,4 +139,11 @@ function ot1() {
 }
 function ct1() {
     document.getElementById('t1').style.display = 'none';
+}
+
+function od06() {
+    document.getElementById('d06').style.display = 'block';
+}
+function cd06() {
+    document.getElementById('d06').style.display = 'none';
 }

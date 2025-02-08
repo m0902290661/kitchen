@@ -11,13 +11,18 @@
 
 <body>
     <div class="d00" id="d00">
-        <button onclick="closem()">&times;</button>
+        <button onclick="closem()" class="x">&times;</button>
         <iframe src="系統使用說明.htm" frameborder="0"></iframe>
     </div>
     <div class="d05" id="t1">
         <h2>處理中</h2>
         <p>本彈窗消失代表完成</p>
         <img src="icegif-1263.gif" alt="">
+    </div>
+    <div class="d06" id="d06">
+        <img src="華庭茶葉有限公司logo.png" onclick="cd06()">
+        <p>按logo關閉彈出視窗</p>
+        <p id="out"></p>
     </div>
      
 
@@ -26,23 +31,18 @@
         <img src="華庭茶葉有限公司logo.png" alt="">
         <h1>華庭茶葉收銀系統</h1>
     </div>
-
     <div class="d02">
         <button onclick="f50()">50</button>
         <button onclick="f60()">60</button>
         <button onclick="f70()">70</button>
         <button onclick="other()">其他</button>
     </div>
-
     <div class="d03">
         <button onclick="check()">查看統計</button>
         <button onclick="sendData()">同步統計資料</button>
         <button onclick="del()" id="b03">刪除統計</button>
         <button onclick="openm()">系統操作說明</button>
         <p>使用系統前應詳閱操作說明</p>
-    </div>
-    <div id="out">
-        輸出
     </div>
     <div class="d04">
         <h2>歷來統計資料</h2>
