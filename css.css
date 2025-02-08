@@ -48,3 +48,14 @@ div {
     display: inline;
     color: red;
 }
+.d05 img{
+    width: 25%;
+}
+.d05{
+    border: 1px solid;
+    border-radius: 5px;
+    position: fixed;
+    background-color: white;
+    width: auto;
+    display: none;
+}
