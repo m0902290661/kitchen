@@ -139,6 +139,7 @@ function ot1() {
 }
 function ct1() {
     document.getElementById('t1').style.display = 'none';
+    location.reload();
 }
 
 function od06() {
