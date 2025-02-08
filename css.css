@@ -34,3 +34,17 @@ div {
     width: 90%;
     height: 300px;
 }
+.d00{
+    position: fixed;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: white;
+    display: none;
+}
+.d00 button{
+    display: block;
+}
+.d03 p{
+    display: inline;
+    color: red;
+}

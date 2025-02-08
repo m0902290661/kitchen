@@ -121,3 +121,12 @@ function sendData() {
     .then(() => document.getElementById("out").innerText = "同步成功！")
     .catch(error => console.error("錯誤:", error));
 }
+
+//系統使用說明
+function openm(){
+    document.getElementById('d00').style.display='block';
+}
+
+function closem(){
+    document.getElementById('d00').style.display='none';
+}
