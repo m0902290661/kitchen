@@ -123,15 +123,24 @@ function sendData() {
         .then(() => sendok())
         .catch(error => senderror());
 }
-function sendok(){
+function sendok() {
     ct1();
     od06();
-    document.getElementById('out').innerText='已完成上傳！';
+    document.getElementById('out').innerText = '已完成上傳！';
+    key1 = [];
+    key2 = [];
+    key3 = [];
+    key4 = 0;
+    localStorage.removeItem('key1');
+    localStorage.removeItem('key2');
+    localStorage.removeItem('key3');
+    localStorage.removeItem('key4');
+    alert('由於已同步資料，因此本地統計資料清除。');
 }
-function senderror(){
+function senderror() {
     ct1();
     od06();
-    document.getElementById('out').innerText='上傳失敗！';
+    document.getElementById('out').innerText = '上傳失敗！';
 }
 
 //系統使用說明
