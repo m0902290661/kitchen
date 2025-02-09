@@ -120,8 +120,18 @@ function sendData() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     })
-        .then(() => ct1())
-        .catch(error => console.error("錯誤:", error));
+        .then(() => sendok())
+        .catch(error => senderror());
+}
+function sendok(){
+    ct1();
+    od06();
+    document.getElementById('out').innerText='已完成上傳！';
+}
+function senderror(){
+    ct1();
+    od06();
+    document.getElementById('out').innerText='上傳失敗！';
 }
 
 //系統使用說明
